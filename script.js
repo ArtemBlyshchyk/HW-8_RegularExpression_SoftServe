@@ -28,7 +28,7 @@ true
 */
 // SOLUTION
 // function checkEmail(email) {
-//   let regExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+//   let regExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // символ + та - повинні стояти або поряд у виразі або в кінці [a-zA-Z0-9._%+-], [a-zA-Z0-9.+_%-], [a-zA-Z0-9.+-_%]
 //   return regExp.test(email);
 // }
 // console.log(checkEmail("Qmail2@gmail.com"));
@@ -52,7 +52,7 @@ TASK #4=========================================================================
 */
 // SOLUTION
 // function validBankCard(cardNumber) {
-//   let regexp = /^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$/; //SECOND VARIANT /^\d{4}-\d{4}-\d{4}-\d{4}$/
+//   let regexp = /^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$/; //SECOND VARIANT /^\d{4}-\d{4}-\d{4}-\d{4}$/ // THIRD VARIANT /\d{4}(\-\d{4}){3}/;
 //   if (regexp.test(cardNumber)) {
 //     return true;
 //   } else {
@@ -82,7 +82,7 @@ checkEmail('my_ma--il@gmail.com');
 // SOLUTION
 // function checkEmail(email) {
 //   const emailRegex =
-//     /^[A-Za-z0-9]+([_\-.][A-Za-z0-9]+)*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)*\.[A-Za-z]{2,}$/;
+//     /^[A-Za-z0-9]+([_\-.][A-Za-z0-9]+)*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)*\.[A-Za-z]{2,}$/; // SECOND VARIANT /^[a-zA-Z0-9]+([-_][a-zA-Z0-9_]+)*\@[a-z]+\.[a-z]+$/;
 //   if (emailRegex.test(email)) {
 //     return "Email is correct!";
 //   } else {
@@ -104,7 +104,7 @@ checkLogin('ee1*1ret3');
 false 
 //1, 1, 3
 */
-// SOLUTION //ДОРОБИ ДЗ
+// SOLUTION
 // function checkLogin(str) {
 //   //   Checking the length of login (from 2 to 10);
 //   if (str.length < 2 || str.length > 10) {
@@ -119,6 +119,10 @@ false
 //   const numbers = str.match(/\d+(\.\d+)?/g);
 //   // Checking if the found numbers is number
 //   if (numbers === null) {
+//     return false;
+//   }
+//   if (str.match(/\*/)) {
+//     console.log(numbers);
 //     return false;
 //   }
 //   // Enter found numbers
